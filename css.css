@@ -1,0 +1,12 @@
+.point {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background: red;
+	z-index: 5;
+	border-radius: 50%;
+}
+
+.point:hover {
+	background: pink;
+}

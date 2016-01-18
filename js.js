@@ -17,12 +17,8 @@ document.onmousemove = function (e) {
 	Y = tempY
 };
 
-document.onclick = function () {
-	displayPoint(X, Y);
-	displayPoint(X + 5, Y);
-	displayPoint(X - 5, Y);
-	displayPoint(X, Y + 5);
-	displayPoint(X, Y - 5);
+document.onclick = function (e) {
+	displayMenu(e);
 
 	// point.onclick = function (e) {
 	// 	delete points[point.id];
@@ -36,6 +32,39 @@ document.onclick = function () {
 	// document.body.appendChild(point);
 	// console.log(points);
 };
+
+function displayMenu(e) {
+	var menu = document.getElementById('menu');
+	menu.style.display = 'block';
+	menu.style.top = e.clientY + 'px';
+	menu.style.left = e.clientX + 'px';
+}
+
+function hideMenu(e) {
+	var menu = document.getElementById('menu');
+	menu.style.display = '';
+	e.stopPropagation();
+}
+
+var menuMark = document.getElementById('menu-mark');
+var menuCancel = document.getElementById('menu-cancel');
+
+menuMark.onclick = function (e)  {
+	hideMenu(e);
+	displayOptions(e);
+}
+
+menuCancel.onclick = function (e) {
+	hideMenu(e);
+}
+
+function displayOptions(e) {
+	displayPoint(X, Y);
+	displayPoint(X + 5, Y);
+	displayPoint(X - 5, Y);
+	displayPoint(X, Y + 5);
+	displayPoint(X, Y - 5);
+}
 
 function displayPoint(x, y) {
 	point = document.createElement('div');

@@ -7,6 +7,10 @@
 </head>
 
 <body>
+	<div id="menu">
+		<div class="menu-option" id="menu-mark">Mark</div>
+		<div class="menu-option" id="menu-cancel">Cancel</div>
+	</div>
 	<script src="js.js"></script>
 </body>
 </html>

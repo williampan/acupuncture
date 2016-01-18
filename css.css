@@ -10,3 +10,25 @@
 .point:hover {
 	background: pink;
 }
+
+#menu {
+	border: 1px solid #eee;
+	font-family: 'Arial', sans-serif;
+	padding: 5px;
+	position: absolute;
+	width: 100px;
+	display: none;
+}
+
+.menu-option {
+	padding: 5px;
+}
+
+.menu-option + .menu-option {
+	border-top: 1px solid #eee;
+}
+
+.menu-option:hover {
+	background: #eee;
+	cursor: pointer;
+}
